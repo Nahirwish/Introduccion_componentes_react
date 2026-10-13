@@ -55,7 +55,13 @@ const slides =[
         tipo: "imagen",
         titulo: "Componente anidado",
         imagen: componenteanidado
+    },
+    {
+        tipo:"texto",
+        titulo: "El uso de export en los componentes",
+        content: "La declaración export se utiliza al crear módulos de JavaScript para exportar funciones, objetos o tipos de dato primitivos del módulo para que puedan ser utilizados por otros programas con la sentencia import."
     }
+
 
 
 

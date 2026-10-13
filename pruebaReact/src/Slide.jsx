@@ -24,6 +24,7 @@ function Slide(props){
             <section className="slide">
                 <h1>{props.titulo}</h1>
                 <img src={props.imagen} alt={props.titulo} />
+                <p>{props.content}</p>
             </section>
         );
     }
