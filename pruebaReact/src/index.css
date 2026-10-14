@@ -5,68 +5,156 @@
 
 body {
     margin: 0;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #171923;
-    color: #f7fafc;
+    color: #f7f2ff;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(46, 108, 190, 0.25),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #060925 0%,
+            #05054d 50%,
+            #063c61 100%
+        
+        );
+
+    background-attachment: fixed;
+    background-image: image();
 }
 
+/* Contenedor general: centra toda la presentación */
 .contenedor {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    padding: 32px 20px;
 }
 
+/* Área que contiene la diapositiva y la navegación */
 .presentacion {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+/* Tarjeta principal */
 .slide {
+    width: 100%;
     min-height: 450px;
-    width: 90%;
     padding: 48px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #492f7d;
-    border-radius: 12px;
+
+    
+    background-image: linear-gradient(to righ, rgb(127, 135, 141), rgb(134, 196, 205), blue);
+    border: 1px solid rgba(76, 195, 224, 0.22);
+  
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(165, 65, 220, 0.08);
 }
 
 .slide h1 {
-    color: #f7fafc;
     margin-top: 0;
+    margin-bottom: 24px;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.2;
 }
 
 .slide p {
-    font-size: 1.2rem;
-    line-height: 1.7;
+    margin-top: 0;
+    color: #ded4e8;
+    font-size: 1.15rem;
+    line-height: 1.8;
 }
 
+/* Imágenes y capturas de código */
+.slide img {
+    display: block;
+    max-width: 100%;
+    max-height: 320px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    align-self: center;
+    border-radius: 10px;
+}
+
+/* Navegación */
 .navegacion {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
-.navegacion button {
+button {
     width: 48px;
     height: 48px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1rem;
+    color: #ffffff;
+    background: rgba(39, 55, 204, 0.2);
+    border: 1px solid rgba(34, 190, 242, 0.65);
+    border-radius: 12px;
+
 }
 
-.navegacion button:disabled {
+button:hover:not(:disabled) {
+    background: #1caf96;
+    box-shadow: 0 0 20px rgba(109, 70, 239, 0.25);
+    
+}
+
+button:disabled {
     opacity: 0.35;
     cursor: default;
 }
 
 .navegacion span {
-    min-width: 60px;
+    min-width: 70px;
     text-align: center;
+    color: #d6c5e4;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 600px) {
+    .contenedor {
+        padding: 20px 14px;
+    }
+
+    .slide {
+        min-height: 380px;
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
+
+    .slide p {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .navegacion {
+        gap: 18px;
+    }
 }

@@ -1,4 +1,5 @@
 import reactImage from "./assets/react.svg";
+import Contador from "./Contador";
 
 function Slide(props){
     if(props.tipo === "titulo"){
@@ -6,7 +7,7 @@ function Slide(props){
         return(
             <section className="slide">
                 <h1>{props.titulo}</h1>
-                
+                <p>{props.content}</p>
             </section>
         );
     }    
@@ -15,6 +16,7 @@ function Slide(props){
             <section className="slide">
                 <h1>{props.titulo}</h1>
                 <p>{props.content}</p>
+                <p>{props.contet2}</p>
             </section>
         );
     }
@@ -25,6 +27,9 @@ function Slide(props){
                 <h1>{props.titulo}</h1>
                 <img src={props.imagen} alt={props.titulo} />
                 <p>{props.content}</p>
+                {props.componente === "contador" &&(
+                    <Contador/>
+                )}
             </section>
         );
     }

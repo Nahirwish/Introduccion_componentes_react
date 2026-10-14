@@ -3,9 +3,10 @@ import slides from "./slides";
 import Slide from "./Slide";
 
 function Presentacion(){
+    // useState para cambiar de slide
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    function previousSlide(){
+    function previousSlide(){ 
         if(currentSlide > 0){
             setCurrentSlide(currentSlide -1)
         }
@@ -20,27 +21,30 @@ function Presentacion(){
     const sl = slides[currentSlide];
 
     return(
-        <div className="presentacion">
-            <Slide tipo={sl.tipo}
+        <div className="contenedor">
+            <div className="presentacion">
+                <Slide tipo={sl.tipo}
                     titulo={sl.titulo}
                     content ={sl.content}
-                    contet2 ={sl.content2}
+                    content2 ={sl.content2}
                     imagen = {sl.imagen}
+                    componente = {sl.componente}
             
-            />
-            <div className="navegacion">
-                <button onClick={previousSlide}>  ← </button>
+                />
+                <div className="navegacion">
+                    <button onClick={previousSlide}>  ← </button>
 
-                <span>
-                    {currentSlide +1}/ {slides.length }
+                    <span>
+                        {currentSlide +1}/ {slides.length }
 
-                </span>
+                    </span>
 
-                <button onClick={nextSlide}>  → </button>
+                    <button onClick={nextSlide}>  → </button>
+                </div>
+
+
+
             </div>
-
-
-
         </div>
     )
 }
