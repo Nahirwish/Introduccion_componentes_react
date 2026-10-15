@@ -21,8 +21,8 @@ const slides =[
     {
         tipo:"imagen",
         titulo:"Codigo en js",
-        content: "contenido de la presentacion",
-        imagen: cambiarEstado
+        imagen: cambiarEstado,
+        content: "Se seleccionan los elementos de la pagina y se modifica manualmente su contenido",
     },
     {
         tipo: "texto",
@@ -41,13 +41,13 @@ const slides =[
         tipo:"texto",
         titulo:"Paradigma imperativo / declarativo",
         content: "En un enfoque imperativo, describimos los pasos que deben ejecutarse. En uno declarativo, expresamos el resultado que queremos obtener a partir de los datos disponibles.",
-        content2: "Cambiamos manualmente el contenido del elemento.	Actualizamos el estado y React se encarga de reflejarlo en la interfaz.Gestionamos explícitamente las operaciones sobre el DOM.	Delegamos en React la actualización de la interfaz."
+        componentes:["tabla"]
     },
     {
         tipo: "texto",
         titulo: "Programación orientada a componentes",
         content: "Un componente es una pieza de UI que tiene su propia apariencia y comportamiento. Son funciones de JS que devuelven un marcado (Etquetas HTML)",
-        
+        componentes: ["lista"]
     },
     {
         tipo: "imagen",
@@ -61,19 +61,31 @@ const slides =[
         content: "Los componentes pueden combinarse para construir interfaces mas complejas. Un componente puede usar otros componentes formando una estructura jerárquica"
     },
     {
+        tipo:"texto",
+        titulo:"¿Como se conectan los componentes?",
+        content: "Un componente puede usar otros componentes pra formar una estructura jerárquica"
+    },
+    {
+        tipo:"texto",
+        titulo:"¿Como organizan los componentes en los archivos?",
+        content: "En un proyecto de React los componentes se organizan en distintos archivos",
+        componentes: ["lista_archivos"]
+    },
+    {
         tipo:"imagen",
         titulo: "El estado en React",
         content:"El estado permite guardar información que puede cambiar durante la ejecución de un componente. Cuando el estado se actualiza, REact vuelve a ejecutar el componente para determinar como debe verse la interfaz.",
         imagen: contador,
-        componente : "contador"
+        componentes : ["contador"]
 
     },
 
     {
 
         tipo:"texto",
-        titulo: "Como importar y exportar componentes",
-        content: "Los módulos permiten organizar el código en distintos archivos. Con export hacemos disponible una función desde un módulo, y con import lo incorporamos en otro archivo para usarlo."
+        titulo: "Primera aplicación con Vite",
+        content: "Vite es una herramienta de compilación cuyo objetivo es proporcionar una experiencia de desarrollo más rápida y sencilla para los proyectos web modernos.",
+        content2: "npm create vite@latest my-app -- --template react"
     }
 
 

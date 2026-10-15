@@ -1,5 +1,24 @@
-import reactImage from "./assets/react.svg";
+
 import Contador from "./Contador";
+import Lista from "./Lista";
+import Tabla from "./Tabla";
+import ListaArchivos from "./ListaArchivos"
+
+function mostrarComponente(name){
+    switch(name){
+        case "contador":
+            return <Contador />;
+        case "lista":
+            return <Lista />;
+        case "tabla":
+            return <Tabla/>;
+        case "lista_archivos":
+            return <ListaArchivos/>;
+        default:
+            return null;
+    }
+}
+
 
 function Slide(props){
     if(props.tipo === "titulo"){
@@ -16,9 +35,16 @@ function Slide(props){
             <section className="slide">
                 <h1>{props.titulo}</h1>
                 <p>{props.content}</p>
-                <p>{props.contet2}</p>
+                <p>{props.content2}</p>
+                
+                {props.componentes?.map((name, index) => (
+                    <div key={index}>
+                        {mostrarComponente(name)}
+                    </div>
+                ))}   
             </section>
-        );
+
+    );
     }
 
     if(props.tipo === "imagen"){
@@ -27,21 +53,16 @@ function Slide(props){
                 <h1>{props.titulo}</h1>
                 <img src={props.imagen} alt={props.titulo} />
                 <p>{props.content}</p>
-                {props.componente === "contador" &&(
-                    <Contador/>
-                )}
+                
+                {props.componentes?.map((name, index) => (
+                <div key={index}>
+                    {mostrarComponente(name)}
+                </div>
+            ))}
             </section>
         );
     }
 
-    if(props.tipo === "codigo"){
-        return(
-            <section className="slide">
-                <h1>{props.titulo}</h1>
-                <code>{props.codigo}</code>
-            </section>
-        );
-    }
 
     return(
         <section className="slide">

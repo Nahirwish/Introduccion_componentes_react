@@ -28,7 +28,7 @@ function Presentacion(){
                     content ={sl.content}
                     content2 ={sl.content2}
                     imagen = {sl.imagen}
-                    componente = {sl.componente}
+                    componentes = {sl.componentes}
             
                 />
                 <div className="navegacion">

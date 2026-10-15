@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Presentacion from './Presentación'
-import Contador from './Contador'
+
 
 function App() {
 
